@@ -5,7 +5,6 @@ import HomePage from './pages/HomePage'
 import CreateCat from "./pages/CreateCat"
 import ProtectedRoute from "./ProtectedRoute"
 import {AuthProvider} from './context/AuthContext'
-import DeleteCats from "./components/DeleteCats"
 
 
 const App = () => {
@@ -22,7 +21,6 @@ const App = () => {
           <Route path="/home" element={<HomePage/>}/>
           <Route path="/create-cat" element={<CreateCat/>}/>
           <Route path="/update/:id" element={<CreateCat/>}/>
-          <Route path="/delete/:id" element={<DeleteCats/>}/>
         </Route>
       </Routes>
     </BrowserRouter> 

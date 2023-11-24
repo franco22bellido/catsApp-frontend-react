@@ -15,16 +15,18 @@ const LoginPage = () => {
   })
   return (
     <div>
-      <h1>login</h1>
+      <h1>Login</h1>
       {authErrors.map((error, i)=> (
         <div key={i}>{error}</div>
       ))}
-    <form onSubmit={onSubmit}>
-      <input type="text" {...register("email", {required: true})} placeholder="email"/>
+    <form onSubmit={onSubmit} className="form-control">
+      <label  className="form-label">Email</label>
+      <input type="text" {...register("email", {required: true})}  className='form-control'/>
       {errors.email && (<p>email is required</p>)}
-      <input type="text" {...register("password",{required: true})} placeholder="password"/>
+      <label htmlFor="exampleFormControlInput1" className="form-label">Password</label>
+      <input type="text" {...register("password",{required: true})} className='form-control'/>
       {errors.password && (<p>password is required</p>)}
-      <button type="submit">signIn</button>
+      <button type="submit" className='btn btn-success'>signIn</button>
     </form>
   </div>
   )
