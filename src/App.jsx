@@ -5,23 +5,29 @@ import HomePage from './pages/HomePage'
 import CreateCat from "./pages/CreateCat"
 import ProtectedRoute from "./ProtectedRoute"
 import {AuthProvider} from './context/AuthContext'
+import DeleteCats from "./components/DeleteCats"
+
 
 const App = () => {
   return (
+    <div className="container">
     <AuthProvider>
       <BrowserRouter>
-      <Routes>
+      <Routes >
         <Route path='/' element={<h1>holamundo</h1>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/register' element={<RegisterPage/>}/>
 
         <Route element={<ProtectedRoute/>}>
           <Route path="/home" element={<HomePage/>}/>
-          <Route path="/craete-cat" element={<CreateCat/>}/>
+          <Route path="/create-cat" element={<CreateCat/>}/>
+          <Route path="/update/:id" element={<CreateCat/>}/>
+          <Route path="/delete/:id" element={<DeleteCats/>}/>
         </Route>
       </Routes>
     </BrowserRouter> 
     </AuthProvider>    
+    </div>
   )
 }
 
