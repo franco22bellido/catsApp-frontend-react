@@ -41,7 +41,7 @@ export const AuthProvider = ({children})=> {
             let newUserToString = JSON.stringify(res.data);
             window.localStorage.setItem('user', newUserToString);
 
-            return setIsAuthenticated(true)
+            return setIsAuthenticated(true);
         } catch (error) {
             if(!Array.isArray(error.response.data?.message)){
                 return setErrors([error.response.data?.message]);
@@ -63,7 +63,7 @@ export const AuthProvider = ({children})=> {
         try {
             const userString = window.localStorage.getItem('user');
             const userObject = JSON.parse(userString);
-            const res = await loadCats(userObject.token);
+            const res = await loadCats(userObject?.token);
 
             if(res.response?.status === 401){
                 setUser(null);

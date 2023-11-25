@@ -1,17 +1,15 @@
 import {useForm} from 'react-hook-form'
 import {  useAuth } from '../context/AuthContext';
-import { useNavigate} from 'react-router-dom'
+import { Navigate, useNavigate} from 'react-router-dom'
 
 const LoginPage = () => {
 
   const {register, handleSubmit, formState: {errors}} = useForm();
   const {signIn, error: authErrors}  = useAuth();
   const navigate = useNavigate();
-
   const onSubmit = handleSubmit(async (values)=> {
       await signIn(values);
-      navigate('/home');
-
+      return navigate("/home");
   })
   return (
     <div>
