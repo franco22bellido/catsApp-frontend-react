@@ -23,7 +23,7 @@ export const getOneCat = (catId, token)=> {
 }
 
 export const updateCat = (id, values, token)=> {
-    return axios.put(`https://nest-cats-api-rest.onrender.com/api/v1/cats/${id}`,values , {
+    return axios.patch(`https://nest-cats-api-rest.onrender.com/api/v1/cats/${id}`,values , {
         headers: {
             Authorization: `Bearer ${token}`
         }

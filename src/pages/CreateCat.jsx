@@ -16,7 +16,8 @@ const CreateCat = () => {
   const onSubmit = handleSubmit(async (values)=> {
    try {
     if(id){
-      await updateCat(id, values, token);
+      
+      await updateCat(id, values, user.token);
     }
     else{
       await saveCat(values, user.token);
