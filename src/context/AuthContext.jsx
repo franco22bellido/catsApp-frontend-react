@@ -40,7 +40,7 @@ export const AuthProvider = ({children})=> {
 
             let newUserToString = JSON.stringify(res.data);
             window.localStorage.setItem('user', newUserToString);
-
+            setUser(res.data);
             return setIsAuthenticated(true);
         } catch (error) {
             if(!Array.isArray(error.response.data?.message)){

@@ -16,7 +16,7 @@ const HomePage = () => {
       setGatos(res.data);
      
     } catch (error) {
-     
+      console.log(error);
     }
   }
   const deleteCats = async (catId)=> {
